@@ -1,9 +1,14 @@
 import { async } from "regenerator-runtime"
 import {API_URL} from './config.js'
+import {APY_KEY} from './config.js'
 import {getJSON} from './helpers.js';
 
 export const state={
     recipe:{},
+    search:{
+      query:'',
+      results:[]
+    }
 };
 
 
@@ -24,10 +29,25 @@ export const loeadRecipe=async function(id){
         }
         catch(err){
 
-          console.log(err);
+       throw err;
 
-          // error handling
         }
         
         
 };
+
+
+export const loadSearchResults=async function(query){
+  try{
+// console.log(query);
+state.search.query=query;
+const data= await getJSON (`${API_URL}?search=${query}&key=${APY_KEY}`)
+state.search.results=data.data.recipes;
+
+
+
+  }
+  catch(err){
+    throw err;
+  }
+}
