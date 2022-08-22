@@ -5,10 +5,10 @@ export default class view{
 
     _data;
 render(data){
+  if(!data || Array.isArray(data) &&  data.length===0)return this.renderError();
 this._data=data;
 this._claer()
 this._parentElment.insertAdjacentHTML('afterbegin',this._gernerateMarkup());
-
 }
 renderSpiner()
 {
@@ -45,7 +45,6 @@ renderError(message=`${this._errorMsg}`){
   <p>${message}</p>
 </div> 
 `
-
 this._parentElment.insertAdjacentElement('beforeend',markup.toDomElement());
 }
 renderMessage(message=`${this._simpleMsg}`){

@@ -6,7 +6,12 @@ import 'regenerator-runtime/runtime'
 import * as modle from './modle.js'
 import recipeView from './views/recipeView.js'
 import SearchView from './views/searchView.js'
+import  results from './views/resultsView.js'
 
+// hot loeading
+if(module.hot){
+  module.hot.accept();
+}
 
 
 
@@ -43,6 +48,7 @@ const controlRecipe=async function(){
 const controlSearchResults=async function(){
  
 try{
+  results.renderSpiner();
   const query=SearchView.getQuery();
   if(!query)return; 
 
@@ -50,7 +56,8 @@ try{
 
   // rendring results
   // here
-  console.log(modle.state.search.results);
+
+  results.render(modle.state.search.results);
 
 
 
