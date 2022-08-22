@@ -62,26 +62,33 @@ console.error(err);
 }
 
 }
-// test
-// controlSearchResults()
+
 const controlPagination=function(goToPage)
 {
   // console.log("🚀 ~ file: controller.js ~ line 68 ~ goToPage", goToPage)
   results.render(modle.getSearchREsultsPage(goToPage));
-   paginationView.render(modle.state.search)
+  paginationView.render(modle.state.search)
 
 // modle.state.search.page=
 
-
-
 }
 
+const controlServings=function(newServings){
+
+// update the recipe serings (in state)
+modle.updateServings(newServings)
+// update thre recipe view
+recipeView.render(modle.state.recipe);// in the view
+
+}
 
 const init =function(){
   
   recipeView.addHandlerRender(controlRecipe);
+  recipeView.addHanglerUpdateServings(controlServings);
   SearchView.addHandlerSearch(controlSearchResults)
   paginationView.addHandlerClick(controlPagination)
+
 
 
 }

@@ -1,4 +1,3 @@
-import { async } from "regenerator-runtime"
 import {API_URL} from './config.js'
 import {APY_KEY} from './config.js'
 import {RESULTS_PER_PAGE} from './config.js'
@@ -63,7 +62,18 @@ state.search.page=page;
 const start=(page-1)*state.search.resultsPerPage,end=start+state.search.resultsPerPage;
 // slice doesnt slice the last one (end)
 // console.log(start,end);
-
 return state.search.results.slice(start,end);
+}
+
+
+export const updateServings=function(newServings){
+
+  // witch side effecy
+  // newquatity=quantity*(newServings/Servings)
+state.recipe.ingredients.forEach(ing =>ing.quantity*=(newServings/state.recipe.servings)
+);
+
+state.recipe.servings=newServings;
+
 }
 
