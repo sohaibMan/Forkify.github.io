@@ -59,7 +59,7 @@ state.search.page=1;
     throw err;
   }
 }
-export const getSearchREsultsPage=function(page=state.search.page){
+export const getSearchResultsPage=function(page=state.search.page){
 // page 1 => 0 -9
 // page 2 => 10 -19
 // start=(page-1)*10;
@@ -81,13 +81,16 @@ state.recipe.servings=newServings;
 
 }
 const persistBookmarks=function(){
+  // here
   localStorage.setItem('bookmarks',JSON.stringify(state.bookmarks));
+
 }
 
 
 export const addBookmark=function(recipe){
 // add bookmark
 state.bookmarks.push(recipe)
+// console.log(state.bookmarks);
 //mark currenct recips as bookmarked
 
 if(recipe.id===state.recipe.id)state.recipe.bookmarked=true;
@@ -100,6 +103,7 @@ export const deleteBookmark=function(id){
   // console.log('delted');
   const index=state.bookmarks.findIndex(el=>el.id===id)
   state.bookmarks.splice(index,1) 
+  console.log(state.bookmarks);
   if(id===state.recipe.id)state.recipe.bookmarked=false;
   
   persistBookmarks()
@@ -109,6 +113,6 @@ const init=function(){
 
 const storage=localStorage.getItem('bookmarks');
 if(storage)state.bookmarks=JSON.parse(storage)
-
+// console.log(state.bookmarks)
 }
 init();

@@ -17,13 +17,10 @@ this._data=data;
 const newMarkup=this._gernerateMarkup();
 const newDom=document.createRange().createContextualFragment(newMarkup);
 const newElments=Array.from(newDom.querySelectorAll('*'))
+console.log("🚀 ~ file: view.js ~ line 20 ~ view ~ update ~ newElments", newDom)
 const currnetElments=Array.from(this._parentElment.querySelectorAll('*'))
-// console.log("🚀 ~ file: view.js ~ line 20 ~ view ~ update ~ newElments", newElments)
-// console.log("🚀 ~ file: view.js ~ line 19 ~ view ~ update ~ newDom", newDom)
-// console.log(newElments,currnetElments);
-// debugger;
+console.log("🚀 ~ file: view.js ~ line 21 ~ view ~ update ~ currnetElments", currnetElments)
 
-if(newElments.length===currnetElments.length)
 newElments.forEach((newEl,i)=>{
 
 const curEl=currnetElments[i];

@@ -5,6 +5,7 @@ _errorMsg=`No bookmarks yet ,Find it and bookmark it  `
 _parentElment=document.querySelector('.bookmarks__list')
 
 addHandlerInit(handler){
+   
 window.addEventListener('load',handler)
 }
 

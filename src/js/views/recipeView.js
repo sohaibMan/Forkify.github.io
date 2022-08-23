@@ -115,7 +115,7 @@ ${this._data.ingredients.map(this._generateMarkupIngredient).join(' ')}
     // const evnets=['load','hashchange']
     ['load', 'hashchange'].forEach(ev => window.addEventListener(ev, handler));
   }
-  addHanglerUpdateServings(handler) {
+  addHandlerUpdateServings(handler) {
     this._parentElment.addEventListener('click', function (e) {
       const btn = e.target.closest('.btn--update-servings');
       // console.log(btn);
@@ -125,12 +125,14 @@ ${this._data.ingredients.map(this._generateMarkupIngredient).join(' ')}
     });
   }
 
-  addHanglerbookmark(handler){
+  addHandlerbookmark(handler){
 this._parentElment.addEventListener('click',function(e){
 
   const btn=e.target.closest('.btn--bookmark');
   if(!btn)return;
-  handler(this._data)
+  // console.log(this._data);
+  // here
+  handler()
 })
 
   } 
