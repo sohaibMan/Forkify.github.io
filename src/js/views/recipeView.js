@@ -68,9 +68,9 @@ class RecipeView extends view {
       </svg>
       -->
     </div>
-    <button class="btn--round">
+    <button class="btn--round btn--bookmark">
       <svg class="">
-        <use href="${icons}#icon-bookmark-fill"></use>
+        <use href="${icons}#icon-bookmark${this._data.bookmarked?'-fill':''}"></use>
       </svg>
     </button>
   </div>
@@ -109,6 +109,7 @@ ${this._data.ingredients.map(this._generateMarkupIngredient).join(' ')}
 
   `;
   }
+
   addHandlerRender(handler) {
     // the publisher
     // const evnets=['load','hashchange']
@@ -123,6 +124,16 @@ ${this._data.ingredients.map(this._generateMarkupIngredient).join(' ')}
       if(updateTo>0)handler(updateTo);
     });
   }
+
+  addHanglerbookmark(handler){
+this._parentElment.addEventListener('click',function(e){
+
+  const btn=e.target.closest('.btn--bookmark');
+  if(!btn)return;
+  handler(this._data)
+})
+
+  } 
 
   _generateMarkupIngredient(ing) {
     return ` <li class="recipe__ingredient">

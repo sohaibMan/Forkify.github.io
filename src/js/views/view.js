@@ -10,6 +10,48 @@ this._data=data;
 this._claer()
 this._parentElment.insertAdjacentHTML('afterbegin',this._gernerateMarkup());
 }
+update(data){
+
+if(!data || Array.isArray(data) &&  data.length===0)return this.renderError();
+this._data=data;
+const newMarkup=this._gernerateMarkup();
+const newDom=document.createRange().createContextualFragment(newMarkup);
+const newElments=Array.from(newDom.querySelectorAll('*'))
+const currnetElments=Array.from(this._parentElment.querySelectorAll('*'))
+// console.log("🚀 ~ file: view.js ~ line 20 ~ view ~ update ~ newElments", newElments)
+// console.log("🚀 ~ file: view.js ~ line 19 ~ view ~ update ~ newDom", newDom)
+// console.log(newElments,currnetElments);
+// debugger;
+
+if(newElments.length===currnetElments.length)
+newElments.forEach((newEl,i)=>{
+
+const curEl=currnetElments[i];
+// comparing nodes
+// console.log(newEl.isEqualNode(curEl))
+//replace elemnt that have text only ;
+
+if(!newEl.isEqualNode(curEl)  && newEl.firstChild?.nodeValue.trim() !== `` ){
+  // console.log(newEl.firstChild.nodeValue);
+// curEl.textContent=newEl.textContent;
+// console.log(curEl,newEl);
+}
+// update attribues from current to new
+if(!newEl.isEqualNode(curEl)){
+
+Array.from(newEl.attributes).forEach(atrr=>curEl.setAttribute(atrr.name,atrr.value))
+//set the attribute of the cur element to the attributes of the new elments 
+}
+
+ 
+
+
+
+})
+
+
+
+}
 renderSpiner()
 {
     this._claer();
