@@ -10,7 +10,7 @@ import resultsView from './views/resultsView.js';
 import bookmarkView from './views/bookmarkView.js';
 import addRecipeView from './views/addrecipeView';
 import addrecipeView from './views/addrecipeView';
-import MODAL_TIMEOUT_SEC from './config'
+import MODAL_TIMEOUT_SEC from './config';
 
 // hot loeading
 // if(module.hot){
@@ -34,7 +34,7 @@ const controlRecipes = async function () {
     bookmarkView.update(model.state.bookmarks);
     // console.log(model.state.bookmarks);
   } catch (err) {
-    console.error(err);
+    // console.error(err);
     recipeView.renderError();
   }
 };
@@ -65,10 +65,14 @@ const controlPagination = function (goToPage) {
 const controlServings = function (newServings) {
   // update the recipe serings (in state)
   model.updateServings(newServings);
+  // console.log(newServings);
   // update thre recipe view
 
   // recipeView.render(model.state.recipe);// in the view
   recipeView.update(model.state.recipe); // in the view
+
+
+  // !here
 };
 const controllAddBookmark = function () {
   // console.log(model.state.recipe.bookmarked);
@@ -102,7 +106,7 @@ const controladdRecipeView =async function (newrecipe) {
     // console.log(model.state.recipe);
   }
   catch(err){
-    addrecipeView.renderError(err.message)
+    addrecipeView.renderError()
     //! we should reset the form inthe casee of the  fail of  the uploaed and in the succes also
   }
   // upload the recipe data to the api 

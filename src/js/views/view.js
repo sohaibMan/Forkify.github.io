@@ -4,32 +4,36 @@ export default class view{
     // parnet class
 
     _data;
+    /**
+     * render the data to the html using a _gernerateMarkup() function with replacing all elments
+     * @param {Object|object[]} data The data to be rendered (e.g reciped) 
+     * @returns  undifinied
+     */
 render(data){
   if(!data || Array.isArray(data) &&  data.length===0)return this.renderError();
 this._data=data;
 this._claer()
 this._parentElment.insertAdjacentHTML('afterbegin',this._gernerateMarkup());
 }
+/**
+ * render the data to the html  using a _gernerateMarkup() function with replacing all modifed elments
+ * @param {*} data 
+ * @this {Object} view instance
+ *@returns  undifinied
+ */
 update(data){
 
-if(!data || Array.isArray(data) &&  data.length===0)return this.renderError();
+// if(!data || Array.isArray(data) &&  data.length===0)return this.renderError();
+// console.log(data);
 this._data=data;
 const newMarkup=this._gernerateMarkup();
 const newDom=document.createRange().createContextualFragment(newMarkup);
 const newElments=Array.from(newDom.querySelectorAll('*'))
 const currnetElments=Array.from(this._parentElment.querySelectorAll('*'))
-
 newElments.forEach((newEl,i)=>{
-
 const curEl=currnetElments[i];
-// comparing nodes
-// console.log(newEl.isEqualNode(curEl))
-//replace elemnt that have text only ;
-
 if(!newEl.isEqualNode(curEl)  && newEl.firstChild?.nodeValue.trim() !== `` ){
-  // console.log(newEl.firstChild.nodeValue);
-// curEl.textContent=newEl.textContent;
-// console.log(curEl,newEl);
+  curEl.textContent=newEl.textContent;
 }
 // update attribues from current to new
 if(!newEl.isEqualNode(curEl)){

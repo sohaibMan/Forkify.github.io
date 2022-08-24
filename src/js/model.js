@@ -76,9 +76,9 @@ export const updateServings=function(newServings){
   // newquatity=quantity*(newServings/Servings)
 state.recipe.ingredients.forEach(ing =>ing.quantity*=(newServings/state.recipe.servings)
 );
-
+// console.log(state.recipe.ingredients);
 state.recipe.servings=newServings;
-
+// console.log(state.recipe.servings);
 }
 const persistBookmarks=function(){
   // here
