@@ -10,7 +10,7 @@ import resultsView from './views/resultsView.js';
 import bookmarkView from './views/bookmarkView.js';
 import addRecipeView from './views/addrecipeView';
 import addrecipeView from './views/addrecipeView';
-import MODAL_TIMEOUT_SEC from './config';
+import {MODAL_TIMEOUT_SEC} from './config';
 
 // hot loeading
 // if(module.hot){

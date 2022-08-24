@@ -1,4 +1,3 @@
-import { mark } from 'regenerator-runtime';
 import view from './view';
 
 class addRecipeView extends view {
