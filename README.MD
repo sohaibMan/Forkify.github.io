@@ -1,4 +1,4 @@
-npm install & npm start 
+npm install && npm start 
 
 
 Forkify API v2 Documentation
