@@ -59,15 +59,14 @@ class RecipeView extends view {
         </button>
       </div>
     </div>
-  
 
-    <div class="recipe__user-generated">
-    <!--
-      <svg>
-        <use href="${icons}#icon-user"></use>
-      </svg>
-      -->
-    </div>
+    <div class="recipe__user-generated ${this._data.key?'':'hidden'}">
+    <svg>
+      <use href="${icons}#icon-user"></use>
+    </svg>
+  </div>
+
+  
     <button class="btn--round btn--bookmark">
       <svg class="">
         <use href="${icons}#icon-bookmark${this._data.bookmarked?'-fill':''}"></use>
@@ -105,6 +104,7 @@ ${this._data.ingredients.map(this._generateMarkupIngredient).join(' ')}
       </svg>
     </a>
   </div>
+ 
   
 
   `;

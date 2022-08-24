@@ -9,7 +9,6 @@ _gernerateMarkup(){
 return this._data.map(this._gernerateMarkupPreview).join(' ');
 
 
-
   }
 
 _gernerateMarkupPreview(el){
@@ -27,6 +26,11 @@ _gernerateMarkupPreview(el){
                 <p class="preview__publisher">${el.publisher}</p>
             
               </div>
+              <div class="preview__user-generated ${el.key?'':'hidden'}">
+              <svg>
+                <use href="${icons}#icon-user"></use>
+              </svg>
+            </div>
             </a>
 
           </li>

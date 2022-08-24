@@ -26,3 +26,29 @@ throw err;
 
     }
 }
+export const  sentJSON=async function(url,recipe){
+
+
+    try{
+        const fetchPromoise=fetch(url,{
+method:'POST',
+headers:{
+    'Content-Type':'application/json'
+},
+body:JSON.stringify(recipe)
+
+        }
+        )
+        const res=await Promise.race([fetchPromoise,timeout(TIMEOUTSECONDS)]);
+        const data=await res.json()
+        if(!res.ok) throw new Error(`Opps ${data.message} , Error code ${res.status}`);
+        return data;
+
+
+          
+    }
+
+    catch(err){
+throw err;
+    }
+}
