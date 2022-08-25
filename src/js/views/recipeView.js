@@ -96,7 +96,7 @@ ${this._data.ingredients.map(this._generateMarkupIngredient).join(' ')}
     </p>
     <a
       class="btn--small recipe__btn"
-      href="${this._data.source_ur}"
+      href="${this._data.source_url}"
       target="_blank"
     >
       <span>Directions</span>

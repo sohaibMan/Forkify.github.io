@@ -535,16 +535,16 @@ function hmrAcceptRun(bundle, id) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 //!imports
 var _runtime = require("regenerator-runtime/runtime");
-var _modelJs = require("./model.js");
-var _recipeViewJs = require("./views/recipeView.js");
+var _modelJs = require("./model.js.js");
+var _recipeViewJs = require("./views/recipeView.js.js");
 var _recipeViewJsDefault = parcelHelpers.interopDefault(_recipeViewJs);
-var _searchViewJs = require("./views/searchView.js");
+var _searchViewJs = require("./views/searchView.js.js");
 var _searchViewJsDefault = parcelHelpers.interopDefault(_searchViewJs);
-var _resultsViewJs = require("./views/resultsView.js");
+var _resultsViewJs = require("./views/resultsView.js.js");
 var _resultsViewJsDefault = parcelHelpers.interopDefault(_resultsViewJs);
-var _paginationViewJs = require("./views/paginationView.js");
+var _paginationViewJs = require("./views/paginationView.js.js");
 var _paginationViewJsDefault = parcelHelpers.interopDefault(_paginationViewJs);
-var _bookmarkViewJs = require("./views/bookmarkView.js");
+var _bookmarkViewJs = require("./views/bookmarkView.js.js");
 var _bookmarkViewJsDefault = parcelHelpers.interopDefault(_bookmarkViewJs);
 var _addrecipeView = require("./views/addrecipeView");
 var _addrecipeViewDefault = parcelHelpers.interopDefault(_addrecipeView);
@@ -1221,8 +1221,8 @@ parcelHelpers.export(exports, "addBookmark", ()=>addBookmark);
 parcelHelpers.export(exports, "deleteBookmark", ()=>deleteBookmark);
 parcelHelpers.export(exports, "uploadRecipe", ()=>uploadRecipe);
 // import { some } from 'core-js/core/array';
-var _configJs = require("./config.js");
-var _helpersJs = require("./helpers.js");
+var _configJs = require("./config.js.js");
+var _helpersJs = require("./helpers.js.js");
 if (module.hot) module.hot.accept();
 const state = {
     recipe: {},
@@ -1426,7 +1426,7 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getJSON", ()=>getJSON);
 parcelHelpers.export(exports, "sentJSON", ()=>sentJSON);
 var _regeneratorRuntime = require("regenerator-runtime");
-var _configJs = require("./config.js");
+var _configJs = require("./config.js.js");
 const timeout = function(s) {
     return new Promise(function(_, reject) {
         setTimeout(function() {
@@ -1475,7 +1475,7 @@ parcelHelpers.defineInteropFlag(exports);
 // console.log(Fraction);
 var _iconsSvg = require("url:../../img/icons.svg");
 var _iconsSvgDefault = parcelHelpers.interopDefault(_iconsSvg);
-var _viewJs = require("./view.js");
+var _viewJs = require("./view.js.js");
 var _viewJsDefault = parcelHelpers.interopDefault(_viewJs);
 // import {Fraction} from 'fractional';
 var Fraction = require("fraction.js");
@@ -2358,7 +2358,7 @@ exports.default = new SearchView();
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cSbZE":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _previewVueJs = require("./previewVue.js");
+var _previewVueJs = require("./previewVue.js.js");
 var _previewVueJsDefault = parcelHelpers.interopDefault(_previewVueJs);
 class ResultsView extends (0, _previewVueJsDefault.default) {
     _errorMsg = `we could not find your query , Please try again with another name `;
@@ -2477,7 +2477,7 @@ exports.default = new PaginationView();
 },{"./view":"bWlJ9","url:../../img/icons.svg":"loVOp","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7YaI3":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _previewVueJs = require("./previewVue.js");
+var _previewVueJs = require("./previewVue.js.js");
 var _previewVueJsDefault = parcelHelpers.interopDefault(_previewVueJs);
 class bookmarkView extends (0, _previewVueJsDefault.default) {
     _errorMsg = `No bookmarks yet ,Find it and bookmark it  `;
