@@ -1,5 +1,5 @@
-// import {Fraction} from 'fractional';
-var Fraction = require('fraction.js');
+import {Fraction} from 'fractional';
+// var Fraction = require('fraction.js');
 // console.log(Fraction);
 import icons from 'url:../../img/icons.svg';
 import view from './view.js';
