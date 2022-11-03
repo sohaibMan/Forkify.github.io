@@ -1,5 +1,7 @@
 ## How to install ?( you need *nodejs* to bo installed (*npm* is included in node) )
+
 <br/>
+
 ```
 git clone https://github.com/sohaibMan/Forkify.github.io.git
 cd Forkify.github.io.git
