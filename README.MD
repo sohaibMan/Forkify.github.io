@@ -1,9 +1,9 @@
 ##How to install ?( you need *nodejs* to bo installed (*npm* is included in node) )
 <br/>
 ```
-<code>git clone https://github.com/sohaibMan/Forkify.github.io.git</code>
-<code>cd Forkify.github.io.git</code>
-<code>npm i && npm start </code>
+git clone https://github.com/sohaibMan/Forkify.github.io.git
+cd Forkify.github.io.git
+npm i && npm start
 ```
 
 Forkify API v2 Documentation
