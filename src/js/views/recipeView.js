@@ -1,4 +1,4 @@
-import { Fraction } from 'fractional';
+// import { Fraction } from 'fractional';
 // var Fraction = require('fraction.js');
 // console.log(Fraction);
 import icons from 'url:../../img/icons.svg';
@@ -146,7 +146,7 @@ this._parentElment.addEventListener('click',function(e){
       <use href="${icons}#icon-check"></use>
     </svg>
     <div class="recipe__quantity">${
-      ing.quantity ? new Fraction(ing.quantity).toString() : ''
+      ing.quantity ?  math.fraction(ing.quantity).toString() : ''
     }
     </div>
     <div class="recipe__description">
